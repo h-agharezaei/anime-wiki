@@ -1,12 +1,13 @@
 :root {
 	color-scheme: light dark;
-	--bg: #0f1115;
-	--panel: #181b22;
-	--accent: #f16d7a;
-	--text: #e8ecf2;
-	--muted: #a5acb8;
-	--border: #262a33;
-	--shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+	--bg: #0f172a;
+	--panel: #111827;
+	--accent: #e11d48;
+	--accent-secondary: #38bdf8;
+	--text: #e5e7eb;
+	--muted: #9ca3af;
+	--border: #1f2933;
+	--shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
 	--radius: 14px;
 	--font-sans: "Inter", "SF Pro Text", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
@@ -19,8 +20,8 @@
 
 body {
 	font-family: var(--font-sans);
-	background: radial-gradient(circle at 20% 20%, rgba(241, 109, 122, 0.08), transparent 25%),
-		radial-gradient(circle at 80% 10%, rgba(134, 202, 255, 0.1), transparent 30%),
+	background: radial-gradient(circle at 20% 20%, rgba(225, 29, 72, 0.12), transparent 25%),
+		radial-gradient(circle at 80% 10%, rgba(56, 189, 248, 0.12), transparent 30%),
 		var(--bg);
 	color: var(--text);
 	min-height: 100vh;
@@ -73,7 +74,7 @@ main {
 }
 
 .card {
-	background: linear-gradient(145deg, #1f2330, #161922);
+	background: linear-gradient(145deg, #111827, #0b1224);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 16px;
@@ -87,9 +88,9 @@ main {
 	display: inline-flex;
 	align-items: center;
 	gap: 6px;
-	background: rgba(241, 109, 122, 0.12);
-	border: 1px solid rgba(241, 109, 122, 0.35);
-	color: #ffd7dd;
+	background: rgba(225, 29, 72, 0.15);
+	border: 1px solid rgba(225, 29, 72, 0.45);
+	color: #ffe4ed;
 	border-radius: 999px;
 	padding: 4px 10px;
 	font-size: 0.8rem;
@@ -108,7 +109,7 @@ main {
 	display: grid;
 	gap: 16px;
 	padding: 24px;
-	background: linear-gradient(120deg, rgba(241, 109, 122, 0.14), rgba(55, 125, 255, 0.12));
+	background: linear-gradient(120deg, rgba(225, 29, 72, 0.18), rgba(56, 189, 248, 0.14));
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	box-shadow: var(--shadow);
