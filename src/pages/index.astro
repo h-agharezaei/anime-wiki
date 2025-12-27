@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { animeList } from '../data/anime';
+import { characterList } from '../data/characters';
+
+const featuredAnime = animeList.slice(0, 3);
+const spotlightCharacters = characterList.slice(0, 3).map((character) => ({
+	...character,
+	animeTitle: animeList.find((anime) => anime.slug === character.animeSlug)?.title ?? 'Unknown',
+}));
+const allGenres = Array.from(new Set(animeList.flatMap((anime) => anime.genres)));
+---
+
+<BaseLayout pageTitle="Home">
+	<section class="hero">
+		<p class="badge">Anime Wiki x Astro</p>
+		<h1>Anime catalog ready for GitHub Pages</h1>
+		<p>
+			Curated entries for anime titles and characters. Replace sample data in
+			<src/data/anime.ts> and <src/data/characters.ts>, drop cover images into
+			<public/images>, and ship.
+		</p>
+		<div class="tag-row">
+			{allGenres.map((genre) => <span class="badge">{genre}</span>)}
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-header">
+			<div>
+				<p class="badge">Featured</p>
+				<h2 class="section-title">Anime</h2>
+			</div>
+			<p class="meta">Static data - replace with your collection</p>
+		</div>
+		<div class="grid">
+			{featuredAnime.map((anime) => (
+				<article class="card">
+					<div class="meta">
+						<span>{anime.year}</span>
+						<span>&bull;</span>
+						<span>{anime.studio}</span>
+					</div>
+					<h3>{anime.title}</h3>
+					<p class="meta">{anime.genres.join(' | ')}</p>
+					<p>{anime.summary}</p>
+					<div class="meta">
+						<span class="badge">Rating {anime.rating}</span>
+						<span class="badge">{anime.status === 'ongoing' ? 'Ongoing' : 'Finished'}</span>
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section-header">
+			<div>
+				<p class="badge">Spotlight</p>
+				<h2 class="section-title">Characters</h2>
+			</div>
+			<p class="meta">Linked back to anime entries</p>
+		</div>
+		<div class="grid">
+			{spotlightCharacters.map((character) => (
+				<article class="card">
+					<div class="meta">
+						<span>{character.role}</span>
+						<span>&bull;</span>
+						<span>{character.animeTitle}</span>
+					</div>
+					<h3>{character.name}</h3>
+					<p>{character.bio}</p>
+					<div class="tag-row">
+						{character.abilities.map((ability) => (
+							<span class="badge">{ability}</span>
+						))}
+					</div>
+				</article>
+			))}
+		</div>
+	</section>
+</BaseLayout>

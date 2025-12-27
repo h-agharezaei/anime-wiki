@@ -1,0 +1,20 @@
+---
+const { title = 'Anime Wiki', description = 'Catalog of anime titles and characters', pageTitle } = Astro.props;
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{pageTitle ? `${pageTitle} • Anime Wiki` : title}</title>
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+		<footer class="footer">Built with Astro • Deploy to GitHub Pages</footer>
+	</body>
+</html>
