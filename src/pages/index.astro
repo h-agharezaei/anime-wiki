@@ -11,14 +11,14 @@ const spotlightCharacters = characterList.slice(0, 3).map((character) => ({
 const allGenres = Array.from(new Set(animeList.flatMap((anime) => anime.genres)));
 ---
 
-<BaseLayout pageTitle="Home">
+<BaseLayout pageTitle="خانه">
 	<section class="hero">
-		<p class="badge">Anime Wiki x Astro</p>
-		<h1>Anime catalog ready for GitHub Pages</h1>
+		<p class="badge">ویکی انیمه · Astro</p>
+		<h1>کاتالوگ انیمه آماده انتشار روی GitHub Pages</h1>
 		<p>
-			Curated entries for anime titles and characters. Replace sample data in
-			<src/data/anime.ts> and <src/data/characters.ts>, drop cover images into
-			<public/images>, and ship.
+			ورودی نمونه برای انیمه‌ها و کاراکترها. داده‌ها را در
+			<src/data/anime.ts> و <src/data/characters.ts> عوض کنید، کاورها را در
+			<public/images> بگذارید و منتشر کنید.
 		</p>
 		<div class="tag-row">
 			{allGenres.map((genre) => <span class="badge">{genre}</span>)}
@@ -28,10 +28,10 @@ const allGenres = Array.from(new Set(animeList.flatMap((anime) => anime.genres))
 	<section class="section">
 		<div class="section-header">
 			<div>
-				<p class="badge">Featured</p>
-				<h2 class="section-title">Anime</h2>
+				<p class="badge">منتخب</p>
+				<h2 class="section-title">انیمه‌ها</h2>
 			</div>
-			<p class="meta">Static data - replace with your collection</p>
+			<p class="meta">داده نمونه - جایگزین کنید</p>
 		</div>
 		<div class="grid">
 			{featuredAnime.map((anime) => (
@@ -56,10 +56,10 @@ const allGenres = Array.from(new Set(animeList.flatMap((anime) => anime.genres))
 	<section class="section">
 		<div class="section-header">
 			<div>
-				<p class="badge">Spotlight</p>
-				<h2 class="section-title">Characters</h2>
+				<p class="badge">کاراکترها</p>
+				<h2 class="section-title">معرفی کوتاه</h2>
 			</div>
-			<p class="meta">Linked back to anime entries</p>
+			<p class="meta">پیوند به انیمه مرتبط</p>
 		</div>
 		<div class="grid">
 			{spotlightCharacters.map((character) => (
